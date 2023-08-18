@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>E-comerce with Django</title>
+    </head>
+    
+    <body>
+        <div>
+            <h1><a href="{% url 'produk_list' %}">E-comerce</a></h1>
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </body>
+</html>

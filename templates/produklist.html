@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Products</h2>
+    <ul>
+        {% for produk in produks %}
+            <li>
+                <a href="#">{{ produk.name }}</a>
+            </li>
+
+        {% empty %}
+            
+            <li>
+                Sorry. No product founds.
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
