@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Shoping Chart</h2>
+    <ul>
+        {% for item in order_items %}
+            <li>
+                <strong>{{ item.produk.name }}</strong> - {{ item.jumlah }}
+            </li>
+            {% empty %}
+            <li>
+                Cart is empty
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p>Total Price : {{ order.total_harga }}</p>
+
+    <a href="{% url 'checkout' %}">Checkout</a>
+
+{% endblock %}

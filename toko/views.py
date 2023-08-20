@@ -10,7 +10,7 @@ def produk_list(request):
 def produk_detail(request):
     produk = get_object_or_404(Product, pk=produk_id)
 
-    return render(request, 'template/produkdetail.html', {'produk': produk})
+    return render(request, 'produkdetail.html', {'produk': produk})
 
 # login account need for add item to chart
 @login_required
