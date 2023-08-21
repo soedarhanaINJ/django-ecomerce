@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ produk.name }}</h2>
+    <p>Price : {{ produk.harga }}</p>
+    <p>{{ produk.deskripsi }}</p>
+
+    <img src="{{ produk.gambar.url }}" alt="{{ produk.name }}" width="200">
+    <a href="{% url 'tambah_keranjang' produk.id %}">Add to chart</a>
+{% endblock %}

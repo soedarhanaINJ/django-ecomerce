@@ -7,14 +7,14 @@ def produk_list(request):
 
     return render(request, 'produklist.html', {'produks': produks})
 
-def produk_detail(request):
+def produk_detail(request, produk_id):
     produk = get_object_or_404(Product, pk=produk_id)
 
     return render(request, 'produkdetail.html', {'produk': produk})
 
 # login account need for add item to chart
 @login_required
-def tambah_keranjang(request):
+def tambah_keranjang(request, produk_id):
     produk = get_object_or_404(Product, pk=produk_id)
     order, created = Order.objects.get_or_create(user=request.user, is_ordered=False)
     order_item, created = OrderItem.objects.get_or_create(order=order, produk=produk)
